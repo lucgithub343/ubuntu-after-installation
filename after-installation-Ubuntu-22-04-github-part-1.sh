@@ -89,7 +89,7 @@ fi
 
 
 
-echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS********************************************************"
+echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
 
 sudo apt install ubuntu-restricted-extras -y
 
