@@ -10,7 +10,8 @@ echo -e "\n\n******************************************** INSTALANDO  IMPRESSORA
 ## https://th.canon/en/support/PIXMA%20G3010/model
 ## Download Driver Impressora
 echo -e "\n\n\n Driver Impressora"
-if [ -d /impressora-Canon-G-3110-deb ];then
+if [ -d /impressora-Canon-G-3110-deb ];
+then
   cd impressora-Canon-G-3110-deb/
   chmod +x install.sh
   sudo ./install.sh
@@ -32,6 +33,9 @@ echo -e "\n\n*******************************************************************
 
 echo -e "\n\n\n *************************************  INSTALANDO  SPRING TOOLS  SUITE  COM  LOMBOK **************************************************"
 
+## Selecionando qual versão do java vai ser a padrao
+sudo update-alternatives --config java
+
 ## Spring tool Suite
 sudo dpkg -i spring-tool-suite-4.20.0.RELEASE.deb
 sudo apt --fix-broken install -y
@@ -41,7 +45,7 @@ chmod +x lombok.jar
 sudo java -jar lombok.jar
 
 ## Removendo o arquivo .eclipseproduct
-sudo rm /.eclipseproduct
+## sudo rm /.eclipseproduct
 
 echo "***********************************************************************************************************************************************"
 
@@ -91,7 +95,8 @@ sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
 vmware
 
 ## Consertando o problema de 3d não suportado
-if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' /home/$USER/.vmware/preferences; then
+if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' /home/$USER/.vmware/preferences;
+then
     echo "VMWare ja configurado"
 else
     echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> /home/$USER/.vmware/preferences
@@ -118,7 +123,8 @@ do
     sudo ubuntu-drivers devices
     sudo apt install -y ubuntu-advantage-tools
 
-    if [ $opcao -eq 1 ];then
+    if [ $opcao -eq 1 ];
+    then
         echo -e "\n\n*************************************DESKTOP *****************************************************"
 
         sudo apt install -y nvidia-driver-390
@@ -126,7 +132,8 @@ do
 
         echo -e "\n\n**************************************************************************************************"
         break
-    elif [ $opcao -eq 2 ];then
+    elif [ $opcao -eq 2 ];
+    then
         echo -e "\n\n*********************************** NOTEBOOK LUCIANO *********************************************"
 
         sudo apt install -y nvidia-driver-525
@@ -134,7 +141,8 @@ do
 
         echo -e "\n\n**************************************************************************************************"
         break
-    elif [ $opcao -eq 3 ];then
+    elif [ $opcao -eq 3 ];
+    then
         echo -e "\n\n********************************* NOTEBOOK EMPRESA ***********************************************"
 
         sudo ua attach C12Jp442FKeioyspXdSyrbG9aHn9hw
@@ -145,6 +153,14 @@ do
         echo -e "\n\nOpcao invalida"
     fi
 done
+
+echo "***********************************************************************************************************************************************"
+
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  PACOTES  FLATPACK *****************************************************"
+
+flatpak install flathub org.gnome.Solanum -y
 
 echo "***********************************************************************************************************************************************"
 
@@ -260,6 +276,11 @@ sudo dpkg -i postman-10.18.5.deb
 sudo apt --fix-broken install -y
 
 
+## Pycharm
+sudo dpkg -i pycharm-2023.2.1.deb
+sudo apt --fix-broken install -y
+
+
 ## Star UML
 sudo dpkg -i StarUML_5.1.0_amd64.deb
 sudo apt --fix-broken install -y
@@ -279,16 +300,17 @@ sudo apt --fix-broken install -y
 
 
 ## Baixando repositorio Classes do Git Hub
-if [ -d /home/$USER/.netbeans/18/config/Templates/Classes/ ];then
+if [ -d /home/$USER/.netbeans/19/config/Templates/Classes/ ];
+then
     echo "O diretorio  /home/$USER/.netbeans/18/config/Templates/Classes/  ja existe"
 else
 
   ## Criando a pasta onde vao ficar os templates modificados
-  mkdir -p /home/$USER/.netbeans/18/config/Templates/
+  mkdir -p /home/$USER/.netbeans/19/config/Templates/
 
   echo -e "\n\n\n\n Clonando repositorio Classes do Git Hub"
   git clone https://github.com/lucotavio/Classes.git
-  cp -r Classes/ /home/$USER/.netbeans/18/config/Templates/
+  cp -r Classes/ /home/$USER/.netbeans/19/config/Templates/
 fi
 
 ########################################################## FIM DA  INSTALACAO  DO  APACHE  NETBEANS##################################################
@@ -305,5 +327,9 @@ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 
 ## Deletando dependencias que nao estao sendo utilizadas
 sudo apt autoremove -y
+
+
+## Selecionando qual versão do java vai ser a padrao
+sudo update-alternatives --config java
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"
