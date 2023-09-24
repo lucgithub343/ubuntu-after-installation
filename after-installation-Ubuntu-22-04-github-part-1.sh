@@ -166,6 +166,17 @@ fi
 
 
 
+## Download plugin LanguageTool para o OnlyOffice
+if [ -e languagetool.plugin ];
+then
+    echo "O arquivo  languagetool.plugin  ja existe"
+else
+    echo -e "\n\n\n Plugin Language Tool para o OnlyOffice"
+    wget https://github.com/lucgithub343/language-tool/releases/download/language-tool/languagetool.plugin
+fi
+
+
+
 ## Download Netbeans plugins
 if [ -d /home/$USER/Installation/netbeans-plugins ];
 then
