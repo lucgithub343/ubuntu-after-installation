@@ -291,6 +291,11 @@ sudo dpkg -i visual_studio_code_1.82.2-1694671812_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## WebStorm
+sudo dpkg -i web-storm-2023-2-2.deb
+sudo apt --fix-broken install -y
+
+
 
 ############################################################## INSTALANDO  APACHE  NETBEANS #########################################################
 
