@@ -25,6 +25,21 @@ mkdir -p /home/$USER/Installation/ISO/
 ## Criando diretorio Script dentro da pasta InstallationF/usr/-
 mkdir -p /home/$USER/Installation/Script/
 
+## Criando diretorio Java
+mkdir -p /home/$USER/Projects/Java
+
+## Criando diretorio Projects Angular
+mkdir -p /home/$USER/Projects/Angular
+
+## Criando diretorio Projects Vue
+mkdir -p /home/$USER/Projects/Vue
+
+## Criando diretorio Projects Quasar
+mkdir -p /home/$USER/Projects/Quasar
+
+## Criando diretorio Projects React
+mkdir -p /home/$USER/Projects/React
+
 
 
 ## Entrando na para pasta de programas
@@ -263,15 +278,6 @@ else
   cp -r /home/$USER/Downloads/Softwares/gnome-cursors/McMojave-cursors/ /home/$USER/.icons/
 fi
 
-
-## Baixando repositorio Projetos do Git Hub
-if [ -d /home/$USER/Projects ];then
-    echo "O diretorio  /home/$USER/Projects  ja existe"
-else
-  echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
-  git clone https://github.com/lucotavio/Projetos.git
-  mv Projetos/ /home/$USER/Projects
-fi
 
 
 ## Download Docker Compose dos bancos de dados
