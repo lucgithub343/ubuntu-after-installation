@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-## Entrando na para pasta de programas
+### Entrando na para pasta de programas
 cd /home/$USER/Downloads/Softwares/
 
 rm -r /home/$USER/.icons/Uos-fulldistro-icons/
