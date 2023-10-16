@@ -256,7 +256,7 @@ sudo apt --fix-broken install -y
 
 
 ## Microsoft Edge
-sudo dpkg -i microsoft-edge-stable_116.0.1938.76-1_amd64.deb
+sudo dpkg -i microsoft-edge-stable_117.0.2045.47-1_amd64.deb
 sudo apt --fix-broken install -y
 
 

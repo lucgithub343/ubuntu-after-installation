@@ -35,7 +35,7 @@ ssh-keygen -t rsa -C "luc.git.projects@hotmail.com" -f "luc-git-projects"
 gedit ~/.ssh/luc-git-projects.pub
 ssh-add ~/.ssh/luc-git-projects
 
-
+cd ~/.ssh
 
 ## Configurando conta lucgithub343
 ssh-keygen -t rsa -C "luc.github@hotmail.com" -f "lucgithub343"

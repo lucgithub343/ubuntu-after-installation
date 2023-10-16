@@ -501,12 +501,12 @@ fi
 
 
 ## Download Microsoft Edge
-if [ -e microsoft-edge-stable_116.0.1938.76-1_amd64.deb ];
+if [ -e microsoft-edge-stable_117.0.2045.47-1_amd64.deb ];
 then
-    echo "O arquivo  microsoft-edge-stable_116.0.1938.76-1_amd64.deb ja  existe"
+    echo "O arquivo  microsoft-edge-stable_117.0.2045.47-1_amd64.deb ja  existe"
 else
     echo -e "\n\n\n\n Microsoft Edge"
-    wget https://github.com/lucgithub343/microsoft-edge/releases/download/microsoft-edge/microsoft-edge-stable_116.0.1938.76-1_amd64.deb
+    wget https://github.com/lucgithub343/microsoft-edge/releases/download/microsoft-edge/microsoft-edge-stable_117.0.2045.47-1_amd64.deb
 fi
 
 
