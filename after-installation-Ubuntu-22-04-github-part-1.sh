@@ -222,8 +222,8 @@ then
     echo "O diretorio  /home/$USER/Installation/Script/ubuntu-after-installation-22-04/  ja existe"
 else
     echo -e "\n\n\n\n Scripts de instalacao do Ubuntu 22.04"
-    git clone https://github.com/lucotavio/ubuntu-pos-instalacao.git
-    mv /home/$USER/Downloads/Softwares/ubuntu-pos-instalacao/  /home/$USER/Installation/Script/ubuntu-after-installation-22-04/
+    git clone https://github.com/lucgithub343/ubuntu-after-installation.git
+    cp -r /home/$USER/Downloads/Softwares/ubuntu-after-installation/  /home/$USER/Installation/Script/
 fi
 
 
