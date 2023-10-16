@@ -207,16 +207,11 @@ sudo apt --fix-broken install -y
 
 ## DataGrip
 sudo dpkg -i data-grip-2023.2.1.deb
-udo apt --fix-broken install -y
+sudo apt --fix-broken install -y
 
 
 ## Dbeaver
 sudo dpkg -i dbeaver-le_23.2.0_amd64.deb
-sudo apt --fix-broken install -y
-
-
-## Dropbox
-sudo dpkg -i dropbox_2020.03.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
@@ -252,6 +247,11 @@ sudo apt --fix-broken install -y
 
 ## Kdenlive
 sudo dpkg -i kdenlive-22.12.1.deb
+sudo apt --fix-broken install -y
+
+
+## Mega
+sudo dpkg -i megasync-xUbuntu_22.04_amd64.deb
 sudo apt --fix-broken install -y
 
 

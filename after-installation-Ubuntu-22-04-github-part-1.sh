@@ -403,17 +403,6 @@ fi
 
 
 
-## Download Dropbox
-if [ -e dropbox_2020.03.04_amd64.deb ];
-then
-    echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n Dropbox"
-    wget https://github.com/lucgithub343/dropbox/releases/download/dropbox/dropbox_2020.03.04_amd64.deb
-fi
-
-
-
 ## Download Firefox
 if [ -e firefox-116.0.2.deb ];
 then
@@ -496,6 +485,17 @@ then
 else
     echo -e "\n\n\n\n Lombok"
     wget https://github.com/lucgithub343/lombok/releases/download/lombok/lombok.jar
+fi
+
+
+
+## Download Mega
+if [ -e megasync-xUbuntu_22.04_amd64.deb ];
+then
+    echo "O arquivo  megasync-xUbuntu_22.04_amd64.deb ja  existe"
+else
+    echo -e "\n\n\n\n Mega"
+    wget https://github.com/lucgithub343/mega/releases/download/mega/megasync-xUbuntu_22.04_amd64.deb
 fi
 
 
