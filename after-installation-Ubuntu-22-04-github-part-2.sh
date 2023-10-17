@@ -74,6 +74,75 @@ echo "**************************************************************************
 
 
 
+echo -e "\n\n\n****************************************** INSTALACAO DO  RUBY  AND  RUBY  ON  RAILS *************************************************"
+
+sudo apt update -y
+
+
+## Install required dependencies
+sudo apt install autoconf \
+bison \
+build-essential \
+libssl-dev \
+libyaml-dev \
+libreadline6-dev \
+zlib1g-dev \
+libncurses5-dev \
+libffi-dev \
+libgdbm6 \
+libgdbm-dev \
+libdb-dev -y
+
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+
+
+## Configurando variaveis de ambiente do Rbven
+if grep -qi 'export PATH="$HOME/.rbenv/bin:$PATH"' /home/$USER/.bashrc;
+then
+    echo "Variaveis de Ambiente do Ruby configurados"
+else
+    ## Espaco em branco
+    echo "" >> /home/$USER/.bashrc
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+fi
+
+source ~/.bashrc
+
+## Check version of rbven installed
+## rbenv -v
+
+## List the versions
+rbenv install -l
+
+echo "Digite a versão desejada: "
+read opcao
+
+## Installing the version selected
+rbenv install $opcao
+
+## Set as default version
+rbenv global $opcao
+
+## To remove any ruby version
+## rbenv uninstall $opcao
+
+## See version of Ruby installed
+## ruby -v
+
+## Installing last version of Ruby on Rails
+gem install rails
+rbenv rehash
+
+## See version of Ruby On Rails installed
+## rails -v
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
 chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
@@ -117,6 +186,7 @@ do
     echo "2 - NOTEBOOK PESSOAL"
     echo "3 - NOTEBOOK EMPRESA"
 
+    echo "Digite a opção: "
     read opcao
 
     sudo apt update -y
@@ -278,6 +348,11 @@ sudo apt --fix-broken install -y
 
 ## Pycharm
 sudo dpkg -i pycharm-2023.2.1.deb
+sudo apt --fix-broken install -y
+
+
+## RubyMine
+sudo dpkg -i ruby-mine-2023.2.3.deb
 sudo apt --fix-broken install -y
 
 

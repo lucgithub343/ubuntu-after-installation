@@ -554,6 +554,16 @@ else
 fi
 
 
+## Download RubyMine
+if [ -e ruby-mine-2023.2.3.deb ];
+then
+    echo "O arquivo  ruby-mine-2023.2.3.deb  ja existe"
+else
+    echo -e "\n\n\n\n RubyMine"
+    wget https://github.com/lucgithub343/ruby-mine/releases/download/ruby-mine/ruby-mine-2023.2.3.deb
+fi
+
+
 
 ## Download Spring Tool Suite
 if [ -e spring-tool-suite-4.20.0.RELEASE.deb ];
