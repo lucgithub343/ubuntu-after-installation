@@ -192,6 +192,8 @@ echo "**************************************************************************
 echo -e "\n\n\n************************************************** INSTALANDO  PACOTES  FLATPACK *****************************************************"
 
 flatpak install flathub org.gnome.Solanum -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub org.chromium.Chromium -y
 
 echo "***********************************************************************************************************************************************"
 
