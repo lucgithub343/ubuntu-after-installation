@@ -931,7 +931,7 @@ echo -e "\n\n\n****************************** INSTALANDO  SUPORTE  A FLATPAK****
 
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo "***********************************************************************************************************************************************"
 
