@@ -52,97 +52,6 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n ***************************************************  INSTALANDO  PYTHON 3.11 ********************************************************"
-
-## Instalando Python 3.11
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt update -y
-sudo apt install python3.11 -y
-
-## Adicionando como alternativa o Python 3.10 e o 3.11
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
-
-## Escolhendo a versao do Python
-sudo update-alternatives --config python3
-
-## Mostrando versao do Python escolhida
-python3 -V
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n****************************************** INSTALACAO DO  RUBY  AND  RUBY  ON  RAILS *************************************************"
-
-sudo apt update -y
-
-
-## Install required dependencies
-sudo apt install autoconf \
-bison \
-build-essential \
-libssl-dev \
-libyaml-dev \
-libreadline6-dev \
-zlib1g-dev \
-libncurses5-dev \
-libffi-dev \
-libgdbm6 \
-libgdbm-dev \
-libdb-dev -y
-
-
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-
-
-## Configurando variaveis de ambiente do Rbven
-if grep -qi 'export PATH="$HOME/.rbenv/bin:$PATH"' /home/$USER/.bashrc;
-then
-    echo "Variaveis de Ambiente do Ruby configurados"
-else
-    ## Espaco em branco
-    echo "" >> /home/$USER/.bashrc
-    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-fi
-
-source ~/.bashrc
-
-## Check version of rbven installed
-## rbenv -v
-
-## List the versions
-rbenv install -l
-
-echo "Digite a versão desejada: "
-read opcao
-
-## Installing the version selected
-rbenv install $opcao
-
-## Set as default version
-rbenv global $opcao
-
-## To remove any ruby version
-## rbenv uninstall $opcao
-
-## See version of Ruby installed
-## ruby -v
-
-## Installing last version of Ruby on Rails
-gem install rails
-rbenv rehash
-
-## See version of Ruby On Rails installed
-## rails -v
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
 chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
@@ -228,6 +137,58 @@ echo "**************************************************************************
 
 
 
+
+echo -e "\n\n\n*********************************************** INSTALANDO  RUBY  E  RUBY  ON  RAILS**************************************************"
+
+sudo apt update -y
+
+sudo apt install curl \
+g++ \
+gcc \
+autoconf \
+automake \
+bison \
+libc6-dev \
+libffi-dev \
+libgdbm-dev \
+libncurses5-dev \
+libsqlite3-dev \
+libtool \
+libyaml-dev \
+make \
+pkg-config \
+sqlite3 \
+zlib1g-dev \
+libgmp-dev \
+libreadline-dev \
+libssl-dev -y
+
+gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+curl -sSL https://get.rvm.io | bash -s stable
+
+source ~/.rvm/scripts/rvm
+
+rvm list known
+
+echo "Digite a versao selecionada: "
+read opcao
+
+rvm install ruby-$opcao
+
+source ~/.rvm/scripts/rvm
+
+rvm --default use ruby-$opcao
+
+gem install rails
+
+source ~/.rvm/scripts/rvm
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n************************************************** INSTALANDO  PACOTES  FLATPACK *****************************************************"
 
 flatpak install flathub org.gnome.Solanum -y
@@ -301,7 +262,7 @@ sudo apt --fix-broken install -y
 
 
 ## Insync
-sudo dpkg -i insync_3.8.6.50504-jammy_amd64.deb
+sudo dpkg -i insync_3.8.6.50504-mantic_amd64.de
 sudo apt --fix-broken install -y
 
 
