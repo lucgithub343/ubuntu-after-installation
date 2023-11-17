@@ -822,6 +822,9 @@ echo -e "\n\n\n************************************************** INSTALANDO  AP
 ## Atualizando PPA
 sudo apt update -y
 
+## Instalando fonte Notepadqq
+sudo apt install notepadqq -y
+
 ## Instalando fonte firecode
 sudo apt install fonts-firacode -y
 
