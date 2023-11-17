@@ -52,28 +52,6 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n ***************************************************  INSTALANDO  PYTHON 3.11 ********************************************************"
-
-## Instalando Python 3.11
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt update -y
-sudo apt install python3.11 -y
-
-## Adicionando como alternativa o Python 3.10 e o 3.11
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
-
-## Escolhendo a versao do Python
-sudo update-alternatives --config python3
-
-## Mostrando versao do Python escolhida
-python3 -V
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
 chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
@@ -157,56 +135,6 @@ done
 
 echo "***********************************************************************************************************************************************"
 
-
-
-
-echo -e "\n\n\n*********************************************** INSTALANDO  RUBY  E  RUBY  ON  RAILS**************************************************"
-
-sudo apt update -y
-
-sudo apt install curl \
-g++ \
-gcc \
-autoconf \
-automake \
-bison \
-libc6-dev \
-libffi-dev \
-libgdbm-dev \
-libncurses5-dev \
-libsqlite3-dev \
-libtool \
-libyaml-dev \
-make \
-pkg-config \
-sqlite3 \
-zlib1g-dev \
-libgmp-dev \
-libreadline-dev \
-libssl-dev -y
-
-gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-curl -sSL https://get.rvm.io | bash -s stable
-
-source ~/.rvm/scripts/rvm
-
-rvm list known
-
-echo "Digite a versao selecionada: "
-read opcao
-
-rvm install ruby-$opcao
-
-source ~/.rvm/scripts/rvm
-
-rvm --default use ruby-$opcao
-
-gem install rails
-
-source ~/.rvm/scripts/rvm
-
-echo "***********************************************************************************************************************************************"
 
 
 
