@@ -680,12 +680,12 @@ fi
 
 
 ## Download MySql Workbench
-if [ -e mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb ];
+if [ -e mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb ];
 then
-    echo "O arquivo   mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb  ja existe"
+    echo "O arquivo   mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n MySql Workbench"
-    wget https://github.com/lucgithub343/mysql-workbench/releases/download/mysql-workbench/mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb
+    wget https://github.com/lucgithub343/mysql-workbench/releases/download/mysql-workbench/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
 fi
 
 
@@ -800,28 +800,6 @@ then
 else
     echo -e "\n\n\n\n Vivaldi"
     wget https://github.com/lucgithub343/vivaldi/releases/download/Vivaldi/vivaldi-stable_6.8.3381.44-1_amd64.deb
-fi
-
-
-
-## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle ];
-then
-    echo "O arquivo  VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle  ja existe"
-else
-    echo -e "\n\n\n\n VMware Workstation"
-    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-fi
-
-
-
-## Download Serial VMware Workstation
-if [ -e serial-vmware-workstation.txt ];
-then
-    echo "O arquivo  serial-vmware-workstation.txt  ja existe"
-else
-    echo -e "\n\n\n\n Serial VMware Workstation"
-    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/serial-vmware-workstation.txt
 fi
 
 

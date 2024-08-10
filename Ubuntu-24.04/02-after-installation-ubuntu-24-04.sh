@@ -61,23 +61,34 @@ echo "**************************************************************************
 
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
-chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
+## Download Serial VMware Workstation
+if [ -e serial-vmware-workstation.txt ];
+then
+    echo "O arquivo  serial-vmware-workstation.txt  ja existe"
+else
+    echo -e "\n\n\n\n Serial VMware Workstation"
+    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/serial-vmware-workstation.txt
+fi
 
-## Dependencias do VMware
-sudo apt update -y
-sudo apt install build-essential -y
-sudo apt install manpages-dev  -y
 
-## Instalando VMware
-sudo ./VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
 
-## Alterando icone  do VMwareskypeforlinux-64.deb
-## sudo mkdir /opt/vmware-icon/
-## sudo cp vmware.png /opt/vmware-icon/
-## sudo sed -i 's\vmware-player\/opt/vmware-icon/vmware.png\g' /usr/share/applications/vmware-player.desktop
+## Download VMware Workstation
+if [ -d vmware-host-modules-workstation-17.5.1 ];
+then
+    cd vmware-host-modules-workstation-17.5.1
+    sudo make
+    sudo make install
+else
+    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/vmware-host-modules-workstation-17.5.1.zip
+    unzip vmware-host-modules-workstation-17.5.1.zip
+    cd vmware-host-modules-workstation-17.5.1
+    sudo make
+    sudo make install
+fi
 
-## Abrindo o VMware player via terminal
+
 vmware
+
 
 ## Consertando o problema de 3d não suportado
 if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' ~/.vmware/preferences;
@@ -86,6 +97,10 @@ then
 else
     echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/.vmware/preferences
 fi
+
+
+## Entrando na para pasta de programas
+cd ~/Downloads/Softwares/
 
 echo -e "\n\n\n**************************************************************************************************************************************"
 
@@ -310,7 +325,7 @@ sudo apt --fix-broken install -y
 
 
 ## MySql Workbench
-sudo dpkg -i mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb
+sudo dpkg -i mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
