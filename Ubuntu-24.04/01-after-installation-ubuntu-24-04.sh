@@ -831,7 +831,7 @@ sdk install kotlin
 kotlinc -version
 
 ## Instalando o Maven
-sdk install maven 3.9.6
+sdk install maven 3.9.8
 
 ## Ver versão do Maven
 mvn -v
@@ -849,38 +849,6 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update -y
 sudo apt install php8.2 -y
 php --version
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n********************************************************* INSTALACAO  PYTHON *********************************************************"
-
-sudo apt update -y
-
-sudo apt install -y software-properties-common build-essential libffi-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev libssl-dev
-
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-
-sudo apt update -y
-
-sudo apt install -y python3.12 python3.12-venv
-
-python3.12 --version
-
-sudo apt install python3.12-distutils -y
-
-wget https://bootstrap.pypa.io/get-pip.py
-
-sudo python3.12 get-pip.py
-
-pip3 --version
-
-sudo apt autoremove -y
-
-echo -e "\n************ VERSAO  DO  PYTHON ************"
-python3 --version
 
 echo "***********************************************************************************************************************************************"
 
@@ -963,7 +931,7 @@ echo -e "\n\n\n************************************************** INSTALANDO  AD
 ## Instalando ADB
 sudo apt update -y
 sudo apt install adb -y
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
+sudo apt install lib32z1 -y
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 
@@ -1016,9 +984,6 @@ sudo apt install net-tools -y
 ## Instalando libglib2.0-dev
 sudo apt install libglib2.0-dev -y
 
-## Instalando libgconf-2-4
-sudo apt install libgconf-2-4 -y
-
 ## Instalando cmake
 sudo apt install cmake -y
 
@@ -1052,23 +1017,17 @@ sudo apt install synaptic -y
 ## Instalando Umbrelo
 sudo apt install umbrello -y
 
+## Instalando Gimp
 sudo apt install gimp -y
+
+## Instalando Handbrake
+sudo apt install handbrake -y
+
+## Instalando Kdenlive
+sudo apt install kdenlive -y
 
 ## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
-
-## Instalando Chromium
-sudo add-apt-repository ppa:savoury1/chromium -y
-sudo apt update -y
-sudo apt install chromium-browser -y
-
-## Instalando Navegador Brave
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
-curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser.gpg > /dev/null
-sudo apt update -y
-sudo apt install brave-browser -y
 
 ## Instalando ferramenta de Backup
 sudo apt install luckybackup-data -y
@@ -1113,34 +1072,69 @@ sudo apt install clion -y
 ## Instalndo GoLand
 sudo apt install goland -y
 
-## Instalando Android Studio
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n**************************************************** INSTALANDO  ANDROID  STUDIO  ****************************************************"
+
 sudo apt update -y
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 sudo apt update -y
 sudo apt install android-studio -y
 
-
 echo "***********************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n******************************************** SUBSTITUINDO  FIREFOX  FLATPAK  PELO  NATIVO  *******************************************"
+echo -e "\n\n\n********************************************* SUBSTITUINDO  FIREFOX  SNAP  PELO  NATIVO  *********************************************"
 
 sudo snap remove --purge firefox 
 
-sudo mkdir -p /etc/apt/keyrings
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc arch=amd64]  https://packages.mozilla.org/apt mozilla main" | sudo tee /etc/apt/sources.list.d/mozilla.list > /dev/null
+sudo add-apt-repository ppa:mozillateam/ppa -y
 
-echo "Package: firefox*"|sudo tee /etc/apt/preferences.d/mozilla
-echo "Pin: origin packages.mozilla.org"|sudo tee -a /etc/apt/preferences.d/mozilla
-echo "Pin-Priority: 1001"|sudo tee -a /etc/apt/preferences.d/mozilla
+echo "Package: firefox*"| sudo tee /etc/apt/preferences.d/mozillateamppa
+echo "Pin: release o=LP-PPA-mozillateam"| sudo tee -a /etc/apt/preferences.d/mozillateamppa
+echo "Pin-Priority: 1001"| sudo tee -a /etc/apt/preferences.d/mozillateamppa
 
 sudo apt update -y
-sudo apt install firefox -y
+
+sudo apt install --allow-downgrades firefox -y
 
 echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n*************************************************** INSTALANDO  CHROMIUM  NATIVO *****************************************************"
+
+sudo add-apt-repository ppa:xtradeb/apps -y
+sudo apt update -y
+sudo apt install chromium -y
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n**************************************************** INSTALANDO  BROWSER  BRAVE ******************************************************"
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
+
+curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser.gpg > /dev/null
+
+sudo apt update -y
+
+sudo apt install brave-browser -y
+
+echo "***********************************************************************************************************************************************"
+
 
 
 
@@ -1151,22 +1145,6 @@ sudo apt update -y
 sudo apt install obs-studio -y
 
 echo "***********************************************************************************************************************************************"
-
-
-
-echo -e "\n\n\n*************************************************** INSTALANDO  HANDBRAKE  NATIVO ****************************************************"
-
-sudo apt install handbrake -y
-
-echo "***********************************************************************************************************************************************"
-
-
-
-echo -e "\n\n\n**************************************************** INSTALANDO  KDENLIVE  NATIVO ****************************************************"
-
-sudo apt install kdenlive -y
-
-echo  "**********************************************************************************************************************************************"
 
 
 
