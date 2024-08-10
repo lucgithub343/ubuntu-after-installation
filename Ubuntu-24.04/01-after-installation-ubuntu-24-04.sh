@@ -99,6 +99,103 @@ echo "**************************************************************************
 
 
 
+echo -e "\n\n\n************************************************** INSTALANDO  APLICATIVOS  APT ******************************************************"
+
+## Atualizando PPA
+sudo apt update -y
+
+## Instalando fonte VirtualBox
+sudo apt install virtualbox -y
+
+## Instalando fonte Notepadqq
+sudo apt install notepadqq -y
+
+## Instalando fonte Vim editor
+sudo apt install vim -y
+
+## Instalando terminal terminator
+sudo apt install terminator -y
+
+## Instalando terminal leitor de PDF Okular
+sudo apt install okular -y
+
+## Instalando Dconf Editor
+sudo apt install dconf-editor -y
+
+## Instalando fonte firecode
+sudo apt install fonts-firacode -y
+
+## Instalando Hardinfo
+sudo apt install hardinfo -y
+
+## Instalando gcc g++
+sudo apt install gcc g++ make -y
+
+## Instalando o Transmission
+sudo apt install transmission -y
+
+## Intalando Gnome tweaks tools
+sudo apt install gnome-tweaks -y
+
+## Instalando net-tools
+sudo apt install net-tools -y
+
+## Instalando libglib2.0-dev
+sudo apt install libglib2.0-dev -y
+
+## Instalando cmake
+sudo apt install cmake -y
+
+## Instalando libfuse2
+## Programas do tipo AppImage
+## precisao deste pacote
+sudo apt install libfuse2 -y
+
+## Instalando VLC
+sudo apt install vlc -y
+
+## Instalando Browser Epiphany
+sudo apt install epiphany-browser -y
+
+## Instalando Gnome extensions
+sudo apt install gnome-shell-extensions -y
+sudo apt install chrome-gnome-shell -y
+
+## Instalando o gerenciador de extensões
+sudo apt install gnome-shell-extension-manager -y
+
+## Instalando Kolourpaint
+sudo apt install kolourpaint -y
+
+## Instalando Gparted
+sudo apt install gparted -y
+
+## Instalando Gerenciador de pacote Synaptic
+sudo apt install synaptic -y
+
+## Instalando Umbrelo
+sudo apt install umbrello -y
+
+## Instalando Gimp
+sudo apt install gimp -y
+
+## Instalando Handbrake
+sudo apt install handbrake -y
+
+## Instalando Kdenlive
+sudo apt install kdenlive -y
+
+## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
+
+## Instalando ferramenta de Backup
+sudo apt install luckybackup-data -y
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n********************************************************* INSTALANDO  FLATPAK ********************************************************"
 
 sudo apt update -y
@@ -936,101 +1033,6 @@ sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 
 echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  APLICATIVOS  APT ******************************************************"
-
-## Atualizando PPA
-sudo apt update -y
-
-## Instalando fonte VirtualBox
-sudo apt install virtualbox -y
-
-## Instalando fonte Notepadqq
-sudo apt install notepadqq -y
-
-## Instalando fonte Vim editor
-sudo apt install vim -y
-
-## Instalando terminal terminator
-sudo apt install terminator -y
-
-## Instalando terminal leitor de PDF Okular
-sudo apt install okular -y
-
-## Instalando Dconf Editor
-sudo apt install dconf-editor -y
-
-## Instalando fonte firecode
-sudo apt install fonts-firacode -y
-
-## Instalando Hardinfo
-sudo apt install hardinfo -y
-
-## Instalando gcc g++
-sudo apt install gcc g++ make -y
-
-## Instalando o Transmission
-sudo apt install transmission -y
-
-## Intalando Gnome tweaks tools
-sudo apt install gnome-tweaks -y
-
-## Instalando net-tools
-sudo apt install net-tools -y
-
-## Instalando libglib2.0-dev
-sudo apt install libglib2.0-dev -y
-
-## Instalando cmake
-sudo apt install cmake -y
-
-## Instalando libfuse2
-## Programas do tipo AppImage
-## precisao deste pacote
-sudo apt install libfuse2 -y
-
-## Instalando VLC
-sudo apt install vlc -y
-
-## Instalando Browser Epiphany
-sudo apt install epiphany-browser -y
-
-## Instalando Gnome extensions
-sudo apt install gnome-shell-extensions -y
-sudo apt install chrome-gnome-shell -y
-
-## Instalando o gerenciador de extensões
-sudo apt install gnome-shell-extension-manager -y
-
-## Instalando Kolourpaint
-sudo apt install kolourpaint -y
-
-## Instalando Gparted
-sudo apt install gparted -y
-
-## Instalando Gerenciador de pacote Synaptic
-sudo apt install synaptic -y
-
-## Instalando Umbrelo
-sudo apt install umbrello -y
-
-## Instalando Gimp
-sudo apt install gimp -y
-
-## Instalando Handbrake
-sudo apt install handbrake -y
-
-## Instalando Kdenlive
-sudo apt install kdenlive -y
-
-## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
-sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
-
-## Instalando ferramenta de Backup
-sudo apt install luckybackup-data -y
 
 
 
