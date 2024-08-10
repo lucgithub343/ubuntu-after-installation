@@ -59,54 +59,6 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
-
-## Download Serial VMware Workstation
-if [ -e serial-vmware-workstation.txt ];
-then
-    echo "O arquivo  serial-vmware-workstation.txt  ja existe"
-else
-    echo -e "\n\n\n\n Serial VMware Workstation"
-    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/serial-vmware-workstation.txt
-fi
-
-
-
-## Download VMware Workstation
-if [ -d vmware-host-modules-workstation-17.5.1 ];
-then
-    cd vmware-host-modules-workstation-17.5.1
-    sudo make
-    sudo make install
-else
-    wget https://github.com/lucgithub343/vmware-workstation/releases/download/vmware-workstation/vmware-host-modules-workstation-17.5.1.zip
-    unzip vmware-host-modules-workstation-17.5.1.zip
-    cd vmware-host-modules-workstation-17.5.1
-    sudo make
-    sudo make install
-fi
-
-
-vmware
-
-
-## Consertando o problema de 3d não suportado
-if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' ~/.vmware/preferences;
-then
-    echo "VMWare ja configurado"
-else
-    echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/.vmware/preferences
-fi
-
-
-## Entrando na para pasta de programas
-cd ~/Downloads/Softwares/
-
-echo -e "\n\n\n**************************************************************************************************************************************"
-
-
-
-
 echo -e "\n\n\n************************************************** INSTALANDO  NODE.JS ***************************************************************"
 
 sudo apt update -y
