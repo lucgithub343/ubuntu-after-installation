@@ -6,30 +6,9 @@ cd ~/Downloads/Softwares/
 
 
 
-echo -e "\n\n\n ***********************************************  TERMINO  DA   INSTALACAO  RUBY *****************************************************"
-
-rbenv -v
-
-rbenv install -l
-
-echo "Escolha a versao a ser instalada"
-read versao
-rbenv install $versao
-
-## Instalacao global da Versao do Ruby
-rbenv global $versao
-
-echo "***********************************************************************************************************************************************"
-
-
-
 
 echo -e "\n\n\n********************************************* INSTALANDO  VIRTUALBOX  E  EXTENSION  PACK *********************************************"
 
-## Instalando VirtualBox
-sudo apt install virtualbox -y
-
-## Instalando VirtualBox Extension Pack
 sudo apt install virtualbox-ext-pack -y
 
 echo "***********************************************************************************************************************************************"
@@ -167,6 +146,24 @@ echo "**************************************************************************
 
 
 
+echo -e "\n\n\n ***********************************************  TERMINO  DA   INSTALACAO  RUBY *****************************************************"
+
+rbenv -v
+
+rbenv install -l
+
+echo "Escolha a versao a ser instalada"
+read versao
+rbenv install $versao
+
+## Instalacao global da Versao do Ruby
+rbenv global $versao
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n********************************************************** AMAZON  CKD  CLI **********************************************************"
 
 sudo npm install -g aws-cdk
@@ -175,6 +172,8 @@ sudo npm install -g aws-cdk
 cdk --version
 
 echo "***********************************************************************************************************************************************"
+
+
 
 
 echo -e "\n\n\n********************************************************** AMAZON  AWS  CLI **********************************************************"
@@ -229,11 +228,6 @@ chmod +x *.deb
 
 ## 4K Video Downloader
 sudo dpkg -i 4kvideodownloader_4.21.7-1_amd64.deb
-sudo apt --fix-broken install -y
-
-
-## Driver placa de Video AMD Radeon R5-230
-sudo dpkg -i amdgpu-install_6.1.60103-1_all.deb
 sudo apt --fix-broken install -y
 
 
