@@ -88,6 +88,17 @@ fi
 
 
 
+echo -e "\n\n\n****************************************************** INSTALANDO  COMANDO  CURL *****************************************************"
+
+sudo apt update -y
+
+sudo apt install curl -y
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
 
 sudo apt install ubuntu-restricted-extras -y
@@ -168,14 +179,14 @@ fi
 
 
 
-## Download dos scripts de instalacao do Zorin
-if [ -d ~/Installation/Script/zorin-after-installation/ ];
+## Download dos scripts de instalacao do Ubuntu 24.04
+if [ -d ~/Installation/Script/ubuntu-after-installation/ ];
 then
-    echo "O diretorio  ~/Installation/Script/zorin-after-installation/  ja existe"
+    echo "O diretorio  ~/Installation/Script/ubuntu-after-installation/  ja existe"
 else
-    echo -e "\n\n\n\n Scripts de instalacao do Zorin 17"
-    git clone https://github.com/lucgithub343/zorin-after-installation.git
-    cp -r ~/Downloads/Softwares/zorin-after-installation/ ~/Installation/Script/
+    echo -e "\n\n\n\n Scripts de instalacao do Ubuntu 24.04"
+    git clone https://github.com/lucgithub343/ubuntu-after-installation.git
+    cp -r ~/Downloads/Softwares/ubuntu-after-installation/ ~/Installation/Script/
 fi
 
 
@@ -378,17 +389,6 @@ then
 else
     echo -e "\n\n\n\n 4K Video Downloader"
     wget https://github.com/lucgithub343/4k-video-downloader/releases/download/4k-video-downloader/4kvideodownloader_4.21.7-1_amd64.deb
-fi
-
-
-
-## Download driver placa de Video AMD Radeon R5-230
-if [ -e amdgpu-install_6.1.60103-1_all.deb ];
-then
-    echo "O arquivo  amdgpu-install_6.1.60103-1_all.deb  ja existe"
-else
-    echo -e "\n\n\n\n amdgpu-install_6.1.60103-1_all.deb"
-    wget https://github.com/lucgithub343/amd-radeon-r5-230/releases/download/Radeon-R5-230/amdgpu-install_6.1.60103-1_all.deb
 fi
 
 
@@ -770,7 +770,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 # Add the repository to Apt sources:
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 
@@ -966,9 +966,6 @@ echo -e "\n\n\n************************************************** INSTALANDO  AP
 ## Atualizando PPA
 sudo apt update -y
 
-## Instalando GNOME Text Editor
-sudo apt install gnome-text-editor -y
-
 ## Instalando fonte VirtualBox
 sudo apt install virtualbox -y
 
@@ -1063,29 +1060,6 @@ sudo apt install brave-browser -y
 ## Instalando ferramenta de Backup
 sudo apt install luckybackup-data -y
 
-
-######################################################## INSTALACAO  DO  NAVEGADOR LIBRE-WOLF #######################################################
-
-sudo apt update && sudo apt install -y wget gnupg lsb-release apt-transport-https ca-certificates
-
-distro=$(if echo " una bookworm vanessa focal jammy bullseye vera uma " | grep -q " $(lsb_release -sc) "; then lsb_release -sc; else echo focal; fi)
-
-wget -O- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf.gpg
-
-sudo tee /etc/apt/sources.list.d/librewolf.sources << EOF > /dev/null
-Types: deb
-URIs: https://deb.librewolf.net
-Suites: $distro
-Components: main
-Architectures: amd64
-Signed-By: /usr/share/keyrings/librewolf.gpg
-EOF
-
-sudo apt update -y
-
-sudo apt install librewolf -y
-
-########################################################### FIM  DA  NAVEGADOR LIBRE-WOLF ###########################################################
 
 
 
