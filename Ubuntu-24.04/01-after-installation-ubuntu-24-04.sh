@@ -1041,6 +1041,8 @@ sudo apt install synaptic -y
 ## Instalando Umbrelo
 sudo apt install umbrello -y
 
+sudo apt install gimp -y
+
 ## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
 
@@ -1114,7 +1116,7 @@ echo "**************************************************************************
 
 echo -e "\n\n\n******************************************** SUBSTITUINDO  FIREFOX  FLATPAK  PELO  NATIVO  *******************************************"
 
-flatpak uninstall org.mozilla.firefox -y
+sudo snap remove --purge firefox 
 
 sudo mkdir -p /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
@@ -1133,20 +1135,15 @@ echo "**************************************************************************
 
 echo -e "\n\n\n*************************************************** INSTALANDO  OBS  STUDIO  NATIVO **************************************************"
 
-flatpak uninstall com.obsproject.Studio  -y
-
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 sudo apt update -y
 sudo apt install obs-studio -y
-
 
 echo "***********************************************************************************************************************************************"
 
 
 
 echo -e "\n\n\n*************************************************** INSTALANDO  HANDBRAKE  NATIVO ****************************************************"
-
-flatpak uninstall fr.handbrake.ghb -y
 
 sudo apt install handbrake -y
 
@@ -1156,10 +1153,7 @@ echo "**************************************************************************
 
 echo -e "\n\n\n**************************************************** INSTALANDO  KDENLIVE  NATIVO ****************************************************"
 
-flatpak uninstall org.kde.kdenlive -y
-
 sudo apt install kdenlive -y
-
 
 echo  "**********************************************************************************************************************************************"
 
@@ -1244,16 +1238,5 @@ echo -e "\n\n\n***************************************************** INSTALANDO 
 
 cd ~/Installation/database-docker-compose/Mongo
 sudo docker compose up -d
-
-echo "***********************************************************************************************************************************************"
-
-
-
-echo -e "\n\n\n*************************************** REMOVENDO ARQUIVOS DA PASTA TEMPLATES  *******************************************************"
-
-rm ~/Templates/LibreOffice\ Calc.ods
-rm ~/Templates/LibreOffice\ Draw.odg
-rm ~/Templates/LibreOffice\ Impress.odp
-rm ~/Templates/LibreOffice\ Writer.odt
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"
